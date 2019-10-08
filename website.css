@@ -8,9 +8,8 @@ h1,h2,h3,h4,p{
 }
 
 canvas{
-  margin-top: -20px;
-  width:270px;
-  height:240px;
+  width:700px;
+  height:400px;
 }
 
 .expense_summary, .income_summary{
