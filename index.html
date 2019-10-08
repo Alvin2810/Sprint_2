@@ -9,19 +9,42 @@
   </title>
 </head>
 <body>
-<h1>Expense Tracking App</h1>
-<h2 id="total">Total: $0</h2>
-<div id="top">
-  <section id="expense_amount">
-    <h3>Expense</h3>
-    <h4 id="expense_total">$0</h4>
-    <div  class="expense_stuff"><p id="expense_added"></p><p id="expense_added2"></p></div>
-  </section>
-  <section id="income_amount">
-    <h3>Income</h3>
-    <p id="income_added"></p>
-  </section>
+  <h1>Expense Tracking App</h1>
+  <h2 id="total">Balance: $0</h2>
+
+  <div class="title">
+    <h4 id="expense_total">Expense - $0</h4>
+    <h4 id="income_total">Income - $0</h4>
   </div>
+  <div class=pie><canvas id="piechart" height="200" > </canvas></div>
+
+  <div class="buttons">
+    <label for="expense1"></label><input type="button" id="expense1" value="Add Expense">
+    <label for="income1"></label><input type="button" id="income1" value="Add Income">
+    <label for="summary"></label><input type="button" id="summary" value="Summary">
+  </div>
+
+  <div id="transaction_summary">
+    <h2 class="sum">Summary</h2>
+    <div class="amount">
+      <section id="expense_amount">
+        <h3>Expense</h3>
+        <h4 id="expense_total1">$0</h4>
+
+        <div  class="expense_summary"><p id="expense_added"></p><p id="expense_added2"></p></div>
+      </section>
+
+      <section id="income_amount">
+        <h3>Income</h3>
+        <h4 id="income_total1">$0</h4>
+        <div  class="income_summary"><p id="income_added"></p><p id="income_added2"></p></div>
+      </section>
+    </div>
+    <div class="back">
+    <label for="back"></label><input type="button" id="back" value="Go Back">
+  </div>
+  </div>
+
 
 <div id="bottom">
  <section id="add_expense">
