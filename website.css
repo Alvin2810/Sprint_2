@@ -1,18 +1,67 @@
 body{
-  margin-top:100px;
+  margin-top:25px;
   background-color:pink;
 }
 
 h1,h2,h3,h4,p{
   text-align:center;
 }
-.expense_stuff{
+canvas{
+  margin-top: -20px;
+  width:270px;
+  height:240px;
+}
+
+
+.expense_summary, .income_summary{
   display:grid;
   grid-template-columns: auto auto;
 }
-#top{
+
+.title{
+  text-align: center;
   display:grid;
   grid-template-columns: auto auto;
+}
+
+.sum{
+  margin-top: 70px;
+}
+
+.amount{
+  padding:10px;
+  text-align: center;
+  display:grid;
+  grid-template-columns: auto auto;
+}
+
+.back{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 10px;
+
+}
+.adding_expense,.adding_income{
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  top: 30%;
+  left:12%;
+  width:75%;
+  background-color: white;
+}
+
+.category_selection1,.category_selection2,.input1, .input2{
+  text-align: center;
+  padding: 10px;
+}
+
+.buttons{
+  text-align: center;
+}
+
+#income1,#expense1,#summary{
   padding:10px;
 }
 #expense_amount,#income_amount{
@@ -31,11 +80,4 @@ h1,h2,h3,h4,p{
   border: 2px solid black;
   margin-right:260px;
   margin-left:5px;
-}
-.category_selection{
-  text-align: center;
-}
-.input{
-  text-align: center;
-  padding:10px;
 }
