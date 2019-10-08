@@ -32,7 +32,101 @@ window.expense_input = document.getElementById('expense');
   function myFunc(total, expense) {
   return Number(total) + Number(expense);
 }
+
+var holder = {};
+
+sum.forEach(function(data) {
+  if (holder.hasOwnProperty(data.name)) {
+    holder[data.name] = holder[data.name] + Number(data.value);
+  } else {
+    holder[data.name] = data.value;
+  }
+});
+
+
+
+var data1 = [],
+    data2 = [];
+
+for (var property in holder) {
+
+   if ( ! holder.hasOwnProperty(property)) {
+      continue;
+   }
+
+   data1.push(property);
+   data2.push(holder[property]);
+
 }
 
+//Adding chart to the app//
+let myChart = document.getElementById('piechart').getContext('2d');
+
+// Global Options
+Chart.defaults.global.defaultFontFamily = 'Lato';
+Chart.defaults.global.defaultFontSize = 18;
+Chart.defaults.global.defaultFontColor = '#777';
+
+let massPopChart = new Chart(myChart, {
+  type:'pie',
+  data:{
+    labels:data1,
+    datasets:[{
+      label:'Population',
+      data:data2,
+      backgroundColor:[
+        "orange",
+        "white",
+        'yellow',
+        'red',
+        'magenta',
+        'purple',
+        'blue',
+        "cyan",
+        "green",
+        'dark green',
+        'brown',
+        'tan',
+        'light grey',
+        'blue',
+      ],
+      borderWidth:1,
+      borderColor:'#777',
+      hoverBorderWidth:3,
+      hoverBorderColor:'#000',
+    }]
+  },
+  options:{
+    title:{
+      display:true,
+      text:'Expense',
+      fontColor:"Black",
+      fontSize:18,
+      responsive:true
+    },
+    legend:{
+      display:true,
+      position:'bottom',
+      labels:{
+        usePointStyle: true,
+        fontColor:'#000',
+        fontSize: 13,
+        boxWidth: 7,
+      }
+    },
+    layout:{
+      padding:{
+        left:0,
+        right:0,
+        bottom:0,
+        top:0
+      }
+    },
+    tooltips:{
+      enabled:true
+    }
+  }
+});
+}
 
 window.addEventListener('load', add_Expense, false)
